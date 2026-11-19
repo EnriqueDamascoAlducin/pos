@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="4.0" Serie="FS" Folio="028040" Fecha="2026-08-29T13:34:39" FormaPago="04" SubTotal="8586.90" Moneda="MXN" Total="9960.80" TipoDeComprobante="I" Exportacion="01" MetodoPago="PUE" LugarExpedicion="57200">
+  <cfdi:Emisor Rfc="AAA010101AAA" Nombre="REFACCIONES PROVEEDOR DE PRUEBA" RegimenFiscal="601"/>
+  <cfdi:Receptor Rfc="XAXX010101000" Nombre="CLIENTE DE PRUEBA" DomicilioFiscalReceptor="54800" RegimenFiscalReceptor="625" UsoCFDI="G03"/>
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="25172604" NoIdentificacion="F10010201" Cantidad="80.00" ClaveUnidad="H87" Unidad="PZA" Descripcion="JUEGO ESPEJOS CON LOGO Y LEYENDA 150Z, 250Z, 170Z, 250Z NEGRA, 150 SPORT" ValorUnitario="64.3966" Importe="5151.7280" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="5151.73" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="824.28"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="25172604" NoIdentificacion="F10010195" Cantidad="80.00" ClaveUnidad="H87" Unidad="PZA" Descripcion="JUEGO ESPEJOS CON LOGO Y LEYENDA DT125, DT125 CLASICA, DT125 DELICIAS" ValorUnitario="42.9397" Importe="3435.1760" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="3435.18" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="549.63"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="1373.90">
+    <cfdi:Traslados>
+      <cfdi:Traslado Base="8586.90" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="1373.90"/>
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital Version="1.1" UUID="330036ac-d04d-4807-b23b-0b4aeef306fb" FechaTimbrado="2026-08-29T12:34:42" RfcProvCertif="AAA010101AAA" SelloCFD="x" NoCertificadoSAT="00001000000719545303" SelloSAT="x"/>
+  </cfdi:Complemento>
+</cfdi:Comprobante>
