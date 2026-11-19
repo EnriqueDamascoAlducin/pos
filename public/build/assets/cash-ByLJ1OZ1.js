@@ -1,0 +1,1 @@
+var e={cash:`Efectivo`,card:`Tarjeta`,transfer:`Transferencia`,credit:`Crédito`};export{e as t};

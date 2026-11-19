@@ -1,0 +1,1 @@
+var e=new Intl.NumberFormat(`es-MX`,{style:`currency`,currency:`MXN`}),t=new Intl.NumberFormat(`es-MX`,{maximumFractionDigits:3});function n(t){return e.format(Number(t??0))}function r(e){return t.format(Number(e??0))}function i(e,t){let n=Number(e),r=Number(t);return!r||Number.isNaN(n)||Number.isNaN(r)?null:(r-n)/r*100}export{r as n,i as r,n as t};
