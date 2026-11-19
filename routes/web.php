@@ -10,6 +10,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\PosController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductImportController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\PurchaseImportController;
 use App\Http\Controllers\ReportController;
@@ -48,6 +49,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('sales/{sale}/cancel', [SaleController::class, 'cancel'])->name('sales.cancel');
 
     // Administración
+    Route::middleware('can:products.manage')->prefix('products/import')->name('products.import')->group(function () {
+        Route::get('/', [ProductImportController::class, 'create']);
+        Route::get('template', [ProductImportController::class, 'template'])->name('.template');
+        Route::post('/', [ProductImportController::class, 'upload'])->name('.upload');
+        Route::get('{token}', [ProductImportController::class, 'preview'])->name('.preview');
+        Route::post('{token}', [ProductImportController::class, 'store'])->name('.store');
+        Route::delete('{token}', [ProductImportController::class, 'destroy'])->name('.destroy');
+    });
+
     Route::resource('products', ProductController::class)
         ->except('show')
         ->middleware('can:products.manage');

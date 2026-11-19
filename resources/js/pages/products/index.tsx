@@ -1,8 +1,9 @@
 import { Head, Link, router } from '@inertiajs/react';
 import { confirmDialog } from '@/components/confirm-dialog';
-import { Pencil, Plus, Search, Trash2 } from 'lucide-react';
+import { FileUp, Pencil, Plus, Search, Trash2 } from 'lucide-react';
 import { useState } from 'react';
 import ProductController from '@/actions/App/Http/Controllers/ProductController';
+import ProductImportController from '@/actions/App/Http/Controllers/ProductImportController';
 import InventoryValueCards from '@/components/inventory-value-cards';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -65,11 +66,18 @@ export default function ProductsIndex({
             <div className="flex flex-1 flex-col gap-4 p-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                     <h1 className="text-xl font-semibold">Productos</h1>
-                    <Button asChild>
-                        <Link href={ProductController.create()}>
-                            <Plus /> Nuevo producto
-                        </Link>
-                    </Button>
+                    <div className="flex gap-2">
+                        <Button variant="outline" asChild>
+                            <Link href={ProductImportController.create()}>
+                                <FileUp /> Importar CSV
+                            </Link>
+                        </Button>
+                        <Button asChild>
+                            <Link href={ProductController.create()}>
+                                <Plus /> Nuevo producto
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
 
                 <InventoryValueCards totals={totals} />
